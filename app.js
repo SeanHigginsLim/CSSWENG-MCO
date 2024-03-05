@@ -7,7 +7,8 @@ const routes = require('./routes/routes.js');
 const exphbs = require('express-handlebars');
 const hbs = require('hbs');
 const connect = require('./public/database/server.js');
-const multer  = require('multer')
+const fileUpload = require('express-fileupload');
+// const multer  = require('multer')
 // const { app, protocol, BrowserWindow, ipcMain } = require('electron');
 // const axios = require('axios');
 const appExp = express();
@@ -17,7 +18,7 @@ const path = require('path');
 // const os = require('os');
 
 dotenv.config();
-
+appExp.use(fileUpload());
 // let mainWindow
 
 appExp.set(`view engine`, `hbs`);
